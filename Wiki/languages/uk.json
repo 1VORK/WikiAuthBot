@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ice bulldog"
+		]
 	},
 	"Welcome": "Привіт",
 	"2auth": "! Якщо ви б хотіли автентифікувати свій обліковий запис у Вікіпедії (підтвердити, що ви — це ви), будь ласка, введіть **.auth**",
@@ -32,8 +34,8 @@
 	"cantass": "Я не маю доступу для призначення цієї ролі. Переконайтесь, що моя роль WikiAuth вище",
 	"cantass2": "у списку ролей сервера, щоб я міг мати доступ, також щоб у мене був *control_roles* доступ. Після внесення змін просто використовуйте ту саму команду ще раз, щоб спробувати повторно призначити роль всім авторам учасників. Для повторних випадків зверніться до IVORK#0001.",
 	"havass": "Я призначив роль ROLENAME для COUNT / LENMESSAGEGUILDMEMBERS користувачів, які вже автентифіковані.",
-	"nfindrole": "Мені не вдалося знайти роль MESCONTSPLI1. Щоб використовувати цю команду, будь ласка, позначте її або вставте її ідентифікатор.",
-	"etagid": "Щоб використовувати цю команду, будь ласка, позначте її або вставте її ідентифікатор.",
+	"nfindrole": "Мені не вдалося знайти роль MESCONTSPLI1. Щоб використовувати цю команду, будь ласка, позначте її або вставте її ID.",
+	"etagid": "Щоб використовувати цю команду, будь ласка, позначте її або вставте її ID.",
 	"cantsend": "Я не можу надсилати повідомлення в CHANNAME, увімкніть мені дозволи_ send_messages і знову використовуйте команду. З питань постійних питань звертайтесь до IVORK#0001.",
 	"ssetachan": "CHANNAME успішно встановлено як канал повідомлень про аутентифікацію. Щоб відключити, введіть *.setachan none*.",
 	"sremwchan": "Привітальний канал успішно видалено. Використовуйте **.setwchan *channeltag/channelid***, щоб встановити його знову.",
@@ -43,7 +45,7 @@
 	"ssetwchan": "CHANNAME успішно встановлено як вітальний канал. Щоб відключити, введіть *.setwchan none*.",
 	"helpcommands": "**.status** - перевірити стан хоста бота\n**.setlang *Мова*** - Виберіть мову сервера з наступного: AVAILLANG\n**.setachan *# auth-channel*** або ***ідентифікатор каналу*** - встановити бот каналу повідомлення про автентифікацію на CURACHAN\n**.setrole *@authrole*** або ***роль ролі*** - встановити роль, яка повинна бути призначена автентифікованим користувачам CURROLE \n**.setwchan *#загальний*** або ***ідентифікатор каналу*** - встановлення повідомлень про бот каналів на CURWCHAN\n**.setblock *yes*** or ***no*** - disallows blocked users to authenticate CURSBLOCK\n**.settype *W*** or ***M*** or ***F*** - set server authentication type for Wikimedia or Miraheze or Fandom CURSMIRA\n**.invite** - отримати посилання, щоб запросити цього бота на свій власний сервер",
 	"invt": "Щоб запросити цього бота на власний сервер, скористайтеся наступним посиланням",
-	"Cantfindusedisplayorid": "Не вдалося знайти користувача з іменем *unam*. Будь ласка, переконайтеся, що ви ввели нікнейм або ID користувача.",
+	"Cantfindusedisplayorid": "Не вдалося знайти користувача з іменем *unam*. Будь ласка, переконайтеся, що ви ввели нікнейм або UserID.",
 	"YN2B": "Please enter a value of either **yes** or **no** for whether you want to allow blocked users to authenticate.",
 	"YNBS": "Successfully set disallowing of blocked members authenticating to **VAL**.",
 	"BlockAuth": "Sorry, you could not be authenticated in the **GUILDNAME** server as they don't allow blocked users to authenticate which your account **UNAM** appears to be. Please try again once unblocked.",
