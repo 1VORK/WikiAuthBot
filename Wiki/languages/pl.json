@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Strebski"
+		]
 	},
 	"Welcome": "Witaj",
 	"2auth": "Jeżeli chcesz uwierzytelnić (potwierdzić) swoje konto Wikimedia, wpisz **.auth**",
@@ -10,7 +12,7 @@
 	"pmauth": "Aby uwierzytelnić swoje konto Wikimedia, skorzystaj z linku:",
 	"Commands:": "Polecenia:",
 	"hauth": "**.auth** - uwierzytelnij swoje konto Wikimedia",
-	"hwho": "**.whois *userid*** - podaj ID użytkownika, aby zobaczyć powiązane konto zweryfikowanego użytkownika",
+	"hwho": "**.whois *userid*** - podaj id użytkownika Discord, aby zobaczyć powiązane konto zweryfikowanego użytkownika",
 	"authas": "uwierzytelniony jako Użytkownik:",
 	"Registered:": "Zarejestrowany/-a:",
 	"Home:": "Macierzysta wiki:",
@@ -18,7 +20,7 @@
 	"Edits:": "Edycje:",
 	"Groups:": "Grupy:",
 	"gGroups:": "Grupy globalne:",
-	"max8": "Tylko do dziesięć grup. Kliknij na nick na górze, by zobaczyć pełne informacje.",
+	"max8": "Tylko do 10 grup. Kliknij ich nazwę na górze, by zobaczyć pełne informacje.",
 	"hwho2": "Aby użyć tego polecenia, wpisz **.whois *userid***",
 	"notauthd": "Wydaje się, że ten użytkownik nie jest uwierzytelniony.",
 	"needmanser": "Musisz mieć dostęp **manage server**, aby użyć tego polecenia.",
@@ -46,7 +48,7 @@
 	"Cantfindusedisplayorid": "Nie znaleziono użytkownika o nazwie *unam*. Upewnij się, że użyłeś wyświetlanej nazwy lub podaj jego UserID.",
 	"YN2B": "Wpisz **yes** albo **no**, w zależności od tego, czy chcesz umożliwić uwierzytelnianie zablokowanym użytkownikom.",
 	"YNBS": "Pomyślnie zablokowano uwierzytelnianie zablokowanych użytkowników na **VAL**.",
-	"BlockAuth": "Przepraszamy, nie mogłeś zostać uwierzytelniony na serwerze **GUILDENAME**, ponieważ nie dopuszcza się uwierzytelniania zablokowanych użytkowników, a Twoje konto **UNAM** na takie wygląda. Spróbuj ponownie, kiedy blokada nie będzie obowiązywała.",
+	"BlockAuth": "Przepraszamy, nie mogłeś zostać uwierzytelniony na serwerze **GUILDNAME**, ponieważ nie dopuszcza się uwierzytelniania zablokowanych użytkowników, a Twoje konto **UNAM** na takie wygląda. Spróbuj ponownie, kiedy blokada nie będzie obowiązywała.",
 	"YN2M": "Podaj wartość **W** jak Wikipedia, **M** jak Miraheze lub *F* jak Fandom.",
 	"YNMS": "Typ serwera ustawiono jako **VAL**"
 }
