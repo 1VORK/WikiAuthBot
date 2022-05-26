@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Huñvreüs"
+		]
 	},
 	"Welcome": "Degemer mat",
 	"2auth": "! M'ho peus c'hoant da gadarnaat ho kont Wikipedia, skrivit **.auth** eta",
@@ -12,7 +14,7 @@
 	"hauth": "**.auth** - kadarnaat ho kont Wikimedia",
 	"hwho": "**.whois *userid*** - skrivit id an implijader Discord da welet kont kevelet un implijader kadarnaet",
 	"authas": "anavezet evel Implijader:",
-	"Registered:": "Marilhet:",
+	"Registered:": "Enskrivet :",
 	"Home:": "Degemer:",
 	"Total_edits:": "Niver a aozadennoù:",
 	"Edits:": "Aozadennoù:",
