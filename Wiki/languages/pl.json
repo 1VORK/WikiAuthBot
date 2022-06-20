@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Strebski"
+			"Strebski",
+			"Szczot3k"
 		]
 	},
 	"Welcome": "Witaj",
 	"2auth": "Jeżeli chcesz uwierzytelnić (potwierdzić) swoje konto Wikimedia, wpisz **.auth**",
 	"Hello": "Cześć",
 	"pmoff": "Masz wyłączone prywatne wiadomości",
-	"pmoff2": "włącz je, klikając obok GUILDNAME i wybierając *Privacy Settings*. Wtedy ponownie wpisz **.auth**.",
+	"pmoff2": "włącz je, klikając strzałkę obok GUILDNAME i wybierając *Privacy Settings*. Wtedy ponownie wpisz **.auth**.",
 	"pmauth": "Aby uwierzytelnić swoje konto Wikimedia, skorzystaj z linku:",
 	"Commands:": "Polecenia:",
 	"hauth": "**.auth** - uwierzytelnij swoje konto Wikimedia",
