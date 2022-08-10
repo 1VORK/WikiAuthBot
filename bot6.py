@@ -268,11 +268,11 @@ async def on_message(message):
     except:
         pass
     else:
-        if m.content.split()[0] == '.nauth':
+        if message.content.split()[0] == '.nauth':
             srv = client.get_guild(221049808784326656)
             arole = g(srv.roles, id=642751332263919618)
             try:
-                role = srv.get_role(int(m.content.split()[1]))
+                role = srv.get_role(int(message.content.split()[1]))
                 nauth = []
                 for member in role.members:
                     if arole not in member.roles:
@@ -281,9 +281,9 @@ async def on_message(message):
                     nauth1 = f"```{role.name} role members that aren't authd.\n\n" + "\n".join(nauth) + "```"
                 else:
                     nauth1 = f"All members in the {role.name} role are authenticated."
-                await m.reply(nauth1)
+                await message.reply(nauth1)
             except Exception as e:
-                await m.reply(f"Command failed:\n{e}")
+                await message.reply(f"Command failed:\n{e}")
                 
     
         
@@ -431,7 +431,8 @@ async def on_message(message):
     if message.content.split(' ')[0] == '.auth' and ismira == 2:
         msg = message.content.split(' ')
         if len(msg) != 2:
-            await rply(message, f"Hi there, to authenticate to your Fandom account, ensure you have editted a Fandom account to include your Discord username per below, then type **.auth** again followed by your profile link i.e. `.auth https://community.fandom.com/wiki/User:IVORK`\nhttps://i.imgur.com/sEokWt8.png")
+            await rply(message, f"Hi there, to authenticate to your Fandom account, ensure you have editted a Fandom account to include your Discord username per below, then type **.auth** again followed by your profile link i.e. `.auth https://community.fando
+                       com/wiki/User:IVORK`\nhttps://i.imgur.com/sEokWt8.png")
             return
         url = msg[1]
         regex = re.compile(
