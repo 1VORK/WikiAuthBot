@@ -22,7 +22,7 @@ Ft = Query()
 gdb = TinyDB('Wiki/gsettings.json')
 rdb = TinyDB('Wiki/responses.json')
 tdb = TinyDB('Wiki/auth.json')
-client=discord.Client(intents=intents)
+client=discord.AutoShardedClient(intents=intents)
 #import RPi.GPIO as IO
 
 #from requests import get
