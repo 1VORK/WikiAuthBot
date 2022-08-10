@@ -260,6 +260,33 @@ async def on_message(message):
             return
     except:
         pass    
+    
+    
+    try:                                                ##### Auth'd members in auth list
+        if message.guild.id == 221049808784326656:
+    except:
+        pass
+    else:
+        if m.content.split()[0] == '.nauth':
+            srv = client.get_guild(221049808784326656)
+            arole = g(srv.roles, id=642751332263919618)
+            try:
+                role = srv.get_role(int(m.content.split()[1]))
+                nauth = []
+                for member in role.members:
+                    if arole nto in member.roles:
+                        nauth.append(f"{member.name}#{memebr.discriminator} - {member.id}")
+                if len(nauth) != 0:
+                    nauth1 = f"```{role.name} role members that aren't authd.\n\n" + "\n".join(nauth) + "```"
+                else:
+                    nauth1 = f"All members in the {role.name} role are authenticated."
+                await m.reply(nauth1)
+            except Exception as e:
+                await m.reply(f"Command failed:\n{e}")
+                
+    
+        
+    
     logchan = client.get_channel(626426940403744779)  
     db = TinyDB('Wiki/authd.json')
     Ft = Query()
