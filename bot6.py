@@ -431,8 +431,7 @@ async def on_message(message):
     if message.content.split(' ')[0] == '.auth' and ismira == 2:
         msg = message.content.split(' ')
         if len(msg) != 2:
-            await rply(message, f"Hi there, to authenticate to your Fandom account, ensure you have editted a Fandom account to include your Discord username per below, then type **.auth** again followed by your profile link i.e. `.auth https://community.fando
-                       com/wiki/User:IVORK`\nhttps://i.imgur.com/sEokWt8.png")
+            await rply(message, f"Hi there, to authenticate to your Fandom account, ensure you have editted a Fandom account to include your Discord username per below, then type **.auth** again followed by your profile link i.e. `.auth https://community.fandom.com/wiki/User:IVORK`\nhttps://i.imgur.com/sEokWt8.png")
             return
         url = msg[1]
         regex = re.compile(
