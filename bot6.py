@@ -275,7 +275,7 @@ async def on_message(message):
                 role = srv.get_role(int(m.content.split()[1]))
                 nauth = []
                 for member in role.members:
-                    if arole nto in member.roles:
+                    if arole not in member.roles:
                         nauth.append(f"{member.name}#{memebr.discriminator} - {member.id}")
                 if len(nauth) != 0:
                     nauth1 = f"```{role.name} role members that aren't authd.\n\n" + "\n".join(nauth) + "```"
