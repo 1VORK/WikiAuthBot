@@ -264,7 +264,7 @@ async def on_message(message):
     
     try:                                                ##### Auth'd members in auth list
         if message.guild.id == 221049808784326656:
-            trashval = 1
+            trashval = message.content.split()[0]
     except:
         pass
     else:
