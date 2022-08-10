@@ -987,7 +987,7 @@
             "BlockAuth": "Sajnálom, a(z) **GUILDNAME** szerveren nem tudtad hitelesíteni a fiókodat, mivel a(z) **UNAM** fiókod épp blokkolva van. A blokk lejárta után ismét megpróbálhatod a hitelesítést.",
             "YN2M": "Kérlek, írj be egy érvényes értéket: **W** a Wikipédiához, **M** a Miraheze-hez, **F** a Fandomhoz.",
             "YNMS": "Szerver típusa átállítva: **VAL**"
-	},
+		},
 	"20": {
 		"lang": "BN",	    
 		"Welcome": "স্বাগতম",
@@ -1033,7 +1033,7 @@
 		"YNBS": "Successfully set disallowing of blocked members authenticating to **VAL**.",		
 		"BlockAuth": "Sorry, you could not be authenticated in the **GUILDNAME** server as they don't allow blocked users to authenticate which your account **UNAM** appears to be. Please try again once unblocked.",		
 		"YN2M": "অনুগ্রহ করে উইকিপিডিয়ার জন্য **W** , মিরাহেজের জন্য **M** অথবা ফ্যানডমের জন্য **F** লিখুন।",
-		"YNMS": "সার্ভারের ধরন **VAL** হিসেবে নির্ধারণ করা হয়েছে"	
-	}
+		"YNMS": "সার্ভারের ধরন **VAL** হিসেবে নির্ধারণ করা হয়েছে"	    
+    }
     }
 }
