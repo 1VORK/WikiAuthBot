@@ -261,6 +261,18 @@ async def on_message(message):
     except:
         pass    
     
+    if message.guild.id == 434994995410239488: #True:
+        gdb = TinyDB('Wiki/gsettings.json')
+        Ft = Query()
+        try:
+            links = re.findall("[[(.*)]]", message.content)
+            linkl = []
+            lang = gdb.search(Ft.id==message.guild.id)[0]['lang'].lower()
+            for l in links:
+                linkl.append(f'<https://{lang}.wikipedia.org/wiki/{l}>')
+            await message.reply('\n'.join(linkl))
+        except:
+            pass
     
     try:                                                ##### Auth'd members in auth list
         if message.guild.id == 221049808784326656:
