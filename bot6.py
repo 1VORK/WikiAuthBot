@@ -260,7 +260,7 @@ async def on_message(message):
             return
     except:
         pass    
-    
+
     if message.guild.id == 434994995410239488: #True:
         gdb = TinyDB('Wiki/gsettings.json')
         Ft = Query()
@@ -272,17 +272,17 @@ async def on_message(message):
                 linkl.append(f'<https://{lang}.wikipedia.org/wiki/{l}>')
             await message.reply('\n'.join(linkl))
         except:
-            pass
+            pass    
     
     try:                                                ##### Auth'd members in auth list
         if message.guild.id == 221049808784326656:
-            trashval = message.content.split()[0]
+            trashval = 1
     except:
         pass
     else:
         if message.content.split()[0] == '.nauth':
             srv = client.get_guild(221049808784326656)
-            arole = g(srv.roles, id=642751332263919618)
+            arole = get(srv.roles, id=642751332263919618)
             try:
                 role = srv.get_role(int(message.content.split()[1]))
                 nauth = []
