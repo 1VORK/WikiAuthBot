@@ -269,7 +269,7 @@ async def on_message(message):
             linkl = []
             lang = gdb.search(Ft.id==message.guild.id)[0]['lang'].lower()
             for l in links:
-                linkl.append(f'<https://en.wikipedia.org/wiki/{l}>')
+                linkl.append(f'<https://en.wikipedia.org/wiki/{l.replace(" ","_")}>')
             await message.reply('\n'.join(linkl))
         except:
             pass    
