@@ -265,11 +265,11 @@ async def on_message(message):
         gdb = TinyDB('Wiki/gsettings.json')
         Ft = Query()
         try:
-            links = re.findall("[[(.*)]]", message.content)
+            links = re.findall("\[\[(.*)\]\]", message.content)
             linkl = []
             lang = gdb.search(Ft.id==message.guild.id)[0]['lang'].lower()
             for l in links:
-                linkl.append(f'<https://{lang}.wikipedia.org/wiki/{l}>')
+                linkl.append(f'<https://en.wikipedia.org/wiki/{l}>')
             await message.reply('\n'.join(linkl))
         except:
             pass    
