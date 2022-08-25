@@ -1,0 +1,18 @@
+WikiAuthBot#1556 (625962497165230080) privacy policy & data usage statement.
+
+WikiAuthBot (WAB) collects certain data in order to provide OAuth authentication between Discord and Wikimedia (or Miraheze) accounts.
+
+Upon authenticating, WAB will reach out to the language relevant wikimedia API, and create a session for the user to log into with only the mwoauth-authonly grant (defined as 'User identity verification only, no ability to read pages or act on a user's behalf.'), returning this link to the user.
+A successful login via that session will result in WAB being sent tokens from Wikimedia. WAB uses these tokens to get the username of a user, then drops the tokens from memory.
+
+Some servers have opted in to [[linking]] of messages to thier corresponding wikimedia pages. Essentially the same function as WikiBot#4311 (334801258722492416). 
+
+WAB stores authenticated usernames, discord IDs, server IDs, user-set language region, and channel IDs that have been setup as notification channels.
+
+WAB does not store messages, user tokens, user groups, block logs, images, IPs, channel names or any other content.
+Some of these may be pulled in conducting normal processes, but they are not commited to file.
+
+For users wanting to opt-out of authentication, they can run the command .nauth in any shared server, and their wikimedia username to discord ID relationship will be removed from WAB's database.
+
+WAB is hosted and stores all it's data on Toolforge, other than the creator (User:IVORK / IVORK#0001 140902977618706432), Wikimedia Staff and approved volunteers also have access to the database by nature
+of them administering the Toolforge environment, for a full list, see https://openstack-browser.toolforge.org/project/tools.
