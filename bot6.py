@@ -288,7 +288,7 @@ async def on_message(message):
                 nauth = []
                 for member in role.members:
                     if arole not in member.roles:
-                        nauth.append(f"{member.name}#{memebr.discriminator} - {member.id}")
+                        nauth.append(f"{member.name}#{member.discriminator} - {member.id}")
                 if len(nauth) != 0:
                     nauth1 = f"```{role.name} role members that aren't authd.\n\n" + "\n".join(nauth) + "```"
                 else:
