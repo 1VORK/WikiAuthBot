@@ -280,22 +280,25 @@ async def on_message(message):
     except:
         pass
     else:
-        if message.content.split()[0] == '.nauth':
-            srv = client.get_guild(221049808784326656)
-            arole = get(srv.roles, id=642751332263919618)
-            try:
-                role = srv.get_role(int(message.content.split()[1]))
-                nauth = []
-                for member in role.members:
-                    if arole not in member.roles:
-                        nauth.append(f"{member.name}#{member.discriminator} - {member.id}")
-                if len(nauth) != 0:
-                    nauth1 = f"```{role.name} role members that aren't authd.\n\n" + "\n".join(nauth) + "```"
-                else:
-                    nauth1 = f"All members in the {role.name} role are authenticated."
-                await message.reply(nauth1)
-            except Exception as e:
-                await message.reply(f"Command failed:\n{e}")
+        try:
+            if message.content.split()[0] == '.nauth':
+                srv = client.get_guild(221049808784326656)
+                arole = get(srv.roles, id=642751332263919618)
+                try:
+                    role = srv.get_role(int(message.content.split()[1]))
+                    nauth = []
+                    for member in role.members:
+                        if arole not in member.roles:
+                            nauth.append(f"{member.name}#{member.discriminator} - {member.id}")
+                    if len(nauth) != 0:
+                        nauth1 = f"```{role.name} role members that aren't authd.\n\n" + "\n".join(nauth) + "```"
+                    else:
+                        nauth1 = f"All members in the {role.name} role are authenticated."
+                    await message.reply(nauth1)
+                except Exception as e:
+                    await message.reply(f"Command failed:\n{e}")
+        except:
+            pass
                 
     
         
