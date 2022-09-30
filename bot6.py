@@ -1305,7 +1305,7 @@ async def on_message(message):
                 hauth = t['hauth'].replace('Wikimedia','Fandom')
             else:
                 hauth = t['hauth']
-        embed=discord.Embed(title=f"WikiAuthBot - Help", description=f"**[Support Server](https://discord.gg/rcdBUwy)**\n\n{hauth.replace('*.','*/')}\n{t['hwho'].replace('*.','*/')}\n**.setlang *Language***{t['helpcommands'].split('**.setlang *Language***')[0].replace('AVAILLANG',AVAILLANG).replace('CURACHAN',CURACHAN).replace('CURROLE',CURROLE).replace('CURWCHAN',CURWCHAN).replace('CURSBLOCK', CURSBLOCK).replace('CURSMIRA', CURSMIRA).replace('*.','*/')}", color=0xCCCCCC)
+        embed=discord.Embed(title=f"WikiAuthBot - Help", description=f"**[Support Server](https://discord.gg/rcdBUwy)**\n\n{hauth.replace('*.','*/')}\n{t['hwho'].replace('*.','*/')}\n**.setlang *Language***{t['helpcommands'].split('**.setlang *Language***')[1].replace('AVAILLANG',AVAILLANG).replace('CURACHAN',CURACHAN).replace('CURROLE',CURROLE).replace('CURWCHAN',CURWCHAN).replace('CURSBLOCK', CURSBLOCK).replace('CURSMIRA', CURSMIRA).replace('*.','*/')}", color=0xCCCCCC)
         try:
             if message.guild.id == 221049808784326656:
                 rchan = client.get_channel(737668131190865920).send
