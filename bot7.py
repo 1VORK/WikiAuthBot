@@ -415,33 +415,56 @@ async def set_language(ctx: SlashContext, language=None):
             description="Channel for welcome messages to be posted to. Leave blank to check value",
             option_type=7,
             required=False
+        ),
+        create_option(
+            name='additional_options',
+            description="Remove welcome channel or set it to DMs, leave blank if setting a channel",
+            option_type=3,
+            required=False,
+            choices=[
+                create_choice(name="Remove welcome channel",value='remove'),
+                create_choice(name="Send welcome via DM if able",value='dm')
+            ]
         )
     ])
-async def set_channel_welcome(ctx: SlashContext, channel=None):
+async def set_channel_welcome(ctx: SlashContext, channel=None, additional_options=None):
     gdb = TinyDB('Wiki/gsettings.json')
     t = get_lang(ctx)
     if isinstance(ctx.channel, discord.DMChannel):
         await ctx.reply("Changing of server settings is only available within servers.")
         return
-    if not channel:
+    if not channel and not additional_options:
         en = gdb.search(Ft.id==ctx.guild.id)[0]['wchan']
-        await ctx.reply(f"This server has it's welcome channel set to <#{en}>.")
+        if en == 555:
+            enm = 'DMs'
+        elif en == 0:
+            enm = 'None'
+        else:
+            enm = f'<#{en}>'
+        await ctx.reply(f"This server has it's welcome channel set to {enm}.")
     else:
         if not ctx.author.guild_permissions.manage_server:
             await ctx.reply(t['needmanser'])
         else:
-            en = gdb.searcH(Ft.id==ctx.guild.id)[0]['wchan']
-            if channel.id == en:
-                await ctx.reply(f"That channel is already set up as the welcome channel.")
+            if not additional_options:
+                en = gdb.searcH(Ft.id==ctx.guild.id)[0]['wchan']
+                if channel.id == en:
+                    await ctx.reply(f"That channel is already set up as the welcome channel.")
+                else:
+                    try:
+                        await channel.send(content='Test message', delete_after=1)
+                    except:
+                        await ctx.reply(t['cantsend'].replace('CHANNAME',channel.name))
+                    else:
+                        gdb.upsert({'wchan':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                        await ctx.reply(t['ssetwchan'].replace('CHANNAME', channel.name))
             else:
-                gdb.upsert({'wchan':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
-                await ctx.reply(t['ssetwchan'].replace('CHANNAME', channel.name))
-
-@slash.slash(name='set_channel_welcome_remove',description="Stop me from posting welcome messages to a set channel")
-async def set_channel_welcome_remove(ctx: SlashContext):
-    gdb = TinyDB('Wiki/gsettings.json')
-    await ctx.reply(f"This command is still being setup")
-
+                if additional_options == 'remove':
+                    gdb.upsert({'wchan':0, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    await ctx.reply(t['sremwchan'])
+                else:
+                    gdb.upsert({'wchan':555,'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    await ctx.reply('Set to send welcome messages via DMs if possible.')
 
 @slash.slash(name='set_channel_authenticate', description="Set channel to log successful authentications to",
     options=[
