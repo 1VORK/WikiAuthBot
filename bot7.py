@@ -372,7 +372,7 @@ async def set_type(ctx: SlashContext, type=None):
                     ty = 1
                     valr = "<:mirahezelogo:446641749142798339> Miraheze"
                 gdb.upsert({'mira':ty, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
-                await ctx.replyt(t['YNMS'].replace("VAL", valr))
+                await ctx.reply(t['YNMS'].replace("VAL", valr))
 
 @slash.slash(name="set_language", description="Set the language for the server to use",
     options=[
