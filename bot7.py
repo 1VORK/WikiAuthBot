@@ -457,7 +457,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
                         await ctx.reply(t['cantsend'].replace('CHANNAME',channel.name))
                     else:
                         gdb.upsert({'wchan':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
-                        await ctx.reply(t['ssetwchan'].replace('CHANNAME', channel.name))
+                        await ctx.reply(t['ssetwchan'].replace('CHANNAME', channel.name).split('.')[0])
             else:
                 if additional_options == 'remove':
                     gdb.upsert({'wchan':0, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
