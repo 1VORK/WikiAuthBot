@@ -525,7 +525,7 @@ async def set_channel_authenticate(ctx: SlashContext, channel=None, remove=None)
         ),
         create_option(
             name='remove',
-            description="Select True to remove authentication assigning more users to the authentication role, otherwise leave blank",
+            description="Select True to remove assigning more users to the authentication role, else leave blank",
             option_type=5,
             required=False
         )
