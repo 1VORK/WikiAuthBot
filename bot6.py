@@ -1250,6 +1250,7 @@ async def on_message(message):
             await rply(message, f"{t['sremwchan']}")
 
     if message.content == '.help' or message.content.replace('<','').replace('>','').replace('@','').replace('!','') == '625962497165230080':
+        gdb = TinyDB('Wiki/gsettings.json')
         try:
             if message.guild.id == 454409434676854786:
                 return
