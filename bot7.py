@@ -418,7 +418,7 @@ async def set_language(ctx: SlashContext, language=None):
         ),
         create_option(
             name='additional_options',
-            description="Remove welcome channel or set it to DMs, leave blank if setting a channel",
+            description="Remove welcome channel or set it to DMs. Leave blank if setting a channel/checking value",
             option_type=3,
             required=False,
             choices=[
@@ -457,7 +457,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
                         await ctx.reply(t['cantsend'].replace('CHANNAME',channel.name))
                     else:
                         gdb.upsert({'wchan':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
-                        await ctx.reply(t['ssetwchan'].replace('CHANNAME', channel.name).split('.')[0])
+                        await ctx.reply(t['ssetwchan'].replace('CHANNAME', f'<#{channel.id}>').split('.')[0])
             else:
                 if additional_options == 'remove':
                     gdb.upsert({'wchan':0, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
@@ -473,22 +473,95 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
             description="Channel for authentication messages to be posted to. Leave blank to check value",
             option_type=7,
             required=False
+        ),
+        create_option(
+            name="remove",
+            description="Select True to remove authentication messages posting to set channel, otherwise leave blank",
+            option_type=5,
+            required=False
         )
     ])
-async def set_channel_authenticate(ctx: SlashContext, channel=None):
-    await ctx.reply(f"You chose {channel.mention}\nThis command is still being setup.")
+async def set_channel_authenticate(ctx: SlashContext, channel=None, remove=None):
+    gdb=TinyDB('Wiki/gsettings.json')
+    t = get_lang(ctx)
+    if isinstance(ctx.channel, discord.DMChannel):
+        await ctx.reply("Changing of server settings is only available within servers.")
+        return    
+    en = gdb.search(Ft.id==ctx.guild.id)[0]['achan']
+    if not channel and not remove:        
+        if en == 0:
+            enm = 'None'
+        else:
+            enm = f'<#{en}>'
+        await ctx.reply(f"The authentication channel is set to {enm}")
+    if not ctx.author.guild_permissions.manage_guild:
+        await ctx.reply(t['needmanser'])
+    else:
+        if remove:
+            if not en:
+                await ctx.reply("There isn't a set authentication channel to remove")
+            else:
+                gdb.upsert({'achan':0, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                await ctx.reply(t['sremachan'])
+        else:
+            if channel.id == en:
+                await ctx.reply('That channel is already set up to get authentication messages.')
+            else:
+                try:
+                    await channel.send(content='Test message', delete_after=1)
+                except:
+                    await ctx.reply(t['cantsend'].replace('CHANNAME',channel.name))
+                else:
+                    gdb.upsert({'achan':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    await ctx.reply(t['ssetachan'].replace('CHANNAME',f'<#{channel.id}>').split('.')[0])
 
-@slash.slash(name="set_authentication_role",description="Define the role authenticated users should be assigned, will also run a check on all current members",
+
+@slash.slash(name="set_role",description="Set the role authenticated users should be assigned",
     options=[
         create_option(
             name='role',
-            description='Role to be assigned, leave blank to check value',
+            description='Role to be assigned, leave blank to check value, will check & assign to all members once set',
             option_type=8,
             required=False
         )
     ])
-async def set_authentication_role(ctx: SlashContext, role=None):
-    await ctx.reply(f"You chose {role.mention}\nThis command is still being setup.")
+async def set_role(ctx: SlashContext, role=None):
+    gdb = TinyDB('Wiki/gsettings.json')
+    t = get_lang(ctx)
+    if isinstance(ctx.channel, discord.DMChannel):
+        await ctx.reply("Changing of server settings is only available within servers.")
+        return
+    en = gdb.search(Ft.id==ctx.guild.id)[0]['arole']
+    if not role:
+        if not en:
+            await ctx.reply('This guild does not have an authentication role setup currently.')
+        else:
+            ro = get(ctx.guild.roles, id=en)
+            if not ro:
+                ron = 'a seemingly deleted role'
+            else:
+                ron = ro.name
+            await ctx.reply(f"This guild currently has the authentication role set to {ron}")
+    else:
+        if not ctx.author.guild_permissions.manage_guild:
+            await ctx.reply(t['needmanser'])
+        else:
+            if role.id == en:
+                await ctx.reply(f'That role is the one currently set to.')
+            else:
+                gdb.upsert({'arole':role.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                db = TinyDB('Wiki/auth.json')
+                count = 0
+                async for m in ctx.guild.members(limit=99999):
+                    if db.search(Ft.id==m.id) != []:
+                        try:
+                            if role not in m.roles:
+                                await m.add_roles(role)
+                            count+=1
+                        except:
+                            await ctx.reply(f'{t["cantass"]} {role.name} {t["cantass2"]}')
+                            return
+                await ctx.reply(f"{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(len(ctx.guild.members)))}")
 
 def get_lang(ctx):
     Ft = Query()
