@@ -30,6 +30,11 @@ async def invite(ctx: SlashContext):
     t = get_lang(ctx)
     await ctx.reply(f'{t["invt"]}: <{invlink}>')
 
+@slash.slash(name='help', description='Show command usage')
+async def help(ctx: SlashContext):
+    embed=discord.Embed(title=f"WikiAuthBot - Help", description=f"**[Support Server](https://discord.gg/rcdBUwy)**\n\n</auth:1025443470388764714> - authenticate to you account\n</whois:1025464845694406686> - check your own or another person's account\n</set_language:1025462693886439464> - set the server language\n</set_channel_authenticate:1025462240062734440> - set a channel to post auth messages to\n</set_channel_welcome:1025462240062734439> - set a channel to prompt new joiners to athenticate\n</set_role:1025504106787389562> - set a role to be assigned to authenticated users\n</set_block:1025456381811249192> - disallow blocked users from authenticating\n</set_type:1025462240062734438> - choose between Wikimedia & Miraheze authentication\n</invite:1025437585687973888> - invite the bot to your server", color=0xCCCCCC)
+    await ctx.reply(embed=embed)    
+    
 @slash.slash(name='auth',description='Authenticate to a Wikimedia or Miraheze account')
 async def auth(ctx: SlashContext):
     gdb = TinyDB('Wiki/gsettings.json')
