@@ -447,7 +447,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
             await ctx.reply(t['needmanser'])
         else:
             if not additional_options:
-                en = gdb.searcH(Ft.id==ctx.guild.id)[0]['wchan']
+                en = gdb.search(Ft.id==ctx.guild.id)[0]['wchan']
                 if channel.id == en:
                     await ctx.reply(f"That channel is already set up as the welcome channel.")
                 else:
