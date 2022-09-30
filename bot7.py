@@ -571,7 +571,7 @@ async def set_role(ctx: SlashContext, role=None, remove=None):
                             except:
                                 await kamsg.edit(content=f'That role is the one currently set to.\n{t["cantass"]} {role.name} {t["cantass2"]}')
                                 return
-                    await kamsg.edit(content=f"That role is the one currently set to.\n{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(len(ctx.guild.members)))}")                
+                    await kamsg.edit(content=f"That role is the one currently set to.\n{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(ctx.guild.member_count))}")                
                 else:
                     gdb.upsert({'arole':role.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
                     db = TinyDB('Wiki/auth.json')
@@ -585,7 +585,7 @@ async def set_role(ctx: SlashContext, role=None, remove=None):
                             except:
                                 await ctx.reply(f'{t["cantass"]} {role.name} {t["cantass2"]}')
                                 return
-                    await ctx.reply(f"{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(len(ctx.guild.members)))}")
+                    await ctx.reply(f"{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(ctx.guild.member_count))}")
 
 def get_lang(ctx):
     Ft = Query()
