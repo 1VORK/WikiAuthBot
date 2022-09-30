@@ -1304,7 +1304,7 @@ async def on_message(message):
                 hauth = t['hauth'].replace('Wikimedia','Fandom')
             else:
                 hauth = t['hauth']
-        embed=discord.Embed(title=f"WikiAuthBot - Help", description=f"**[Support Server](https://discord.gg/rcdBUwy)**\n\n{hauth}\n{t['hwho']}\n{t['helpcommands'].replace('AVAILLANG',AVAILLANG).replace('CURACHAN',CURACHAN).replace('CURROLE',CURROLE).replace('CURWCHAN',CURWCHAN).replace('CURSBLOCK', CURSBLOCK).replace('CURSMIRA', CURSMIRA)}", color=0xCCCCCC)
+        embed=discord.Embed(title=f"WikiAuthBot - Help", description=f"**[Support Server](https://discord.gg/rcdBUwy)**\n\n{hauth}\n{t['hwho']}\n{t['helpcommands'].replace('AVAILLANG',AVAILLANG).replace('CURACHAN',CURACHAN).replace('CURROLE',CURROLE).replace('CURWCHAN',CURWCHAN).replace('CURSBLOCK', CURSBLOCK).replace('CURSMIRA', CURSMIRA).replace(".auth","</auth:1025443470388764714>").replace(".whois","</whois:1025464845694406686>").replace(".setlang","</set_language:1025462693886439464>").replace(".setachan","</set_channel_authenticate:1025462240062734440>").replace(".setwchan","</set_channel_welcome:1025462240062734439>").replace(".setrole","</set_role:1025504106787389562>").replace(".setblock","</set_block:1025456381811249192>").replace(".settype","</set_type:1025462240062734438>").replace(".invite","</invite:1025437585687973888>")}", color=0xCCCCCC)
         try:
             if message.guild.id == 221049808784326656:
                 rchan = client.get_channel(737668131190865920).send
