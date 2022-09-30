@@ -358,7 +358,7 @@ async def set_type(ctx: SlashContext, type=None):
             ty = '<:mirahezelogo:446641749142798339>'
         await ctx.reply(f"This server is set to {ty}")
     else:
-        if not ctx.author.guild_permissions.manage_server:
+        if not ctx.author.guild_permissions.manage_guild:
             await ctx.reply(f"{t['needmanser']}", hidden=True)
         else:
             en = gdb.search(Ft.id==ctx.guild.id)[0]['mira']
@@ -398,7 +398,7 @@ async def set_language(ctx: SlashContext, language=None):
         en = gdb.search(Ft.id==ctx.guild.id)[0]['lang']
         await ctx.reply(f"This server has it's language set to {en}\nAvailable languages: {', '.join(langs)}")
     else:
-        if not ctx.author.guild_permissions.manage_server:
+        if not ctx.author.guild_permissions.manage_guild:
             await ctx.reply(t['needmanser'])
         else:
             if language.upper() not in langs:
@@ -443,7 +443,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
             enm = f'<#{en}>'
         await ctx.reply(f"This server has it's welcome channel set to {enm}.")
     else:
-        if not ctx.author.guild_permissions.manage_server:
+        if not ctx.author.guild_permissions.manage_guild:
             await ctx.reply(t['needmanser'])
         else:
             if not additional_options:
