@@ -1,4 +1,3 @@
-from array import typecodes
 import discord, logging, requests, pickle, datetime
 from dateutil import parser
 from discord_slash import SlashCommand, SlashContext
