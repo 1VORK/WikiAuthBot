@@ -433,7 +433,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
         await ctx.reply("Changing of server settings is only available within servers.")
         return
     if not channel and not additional_options:
-        en = gdb.search(Ft.id==ctx.guild.id)[0]['wchan']
+        en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
         if en == 555:
             enm = 'DMs'
         elif en == 0:
@@ -446,7 +446,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
             await ctx.reply(t['needmanser'])
         else:
             if not additional_options:
-                en = gdb.search(Ft.id==ctx.guild.id)[0]['wchan']
+                en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
                 if channel.id == en:
                     await ctx.reply(f"That channel is already set up as the welcome channel.")
                 else:
@@ -455,14 +455,14 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
                     except:
                         await ctx.reply(t['cantsend'].replace('CHANNAME',channel.name))
                     else:
-                        gdb.upsert({'wchan':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                        gdb.upsert({'wmsgs':channel.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
                         await ctx.reply(t['ssetwchan'].replace('CHANNAME', f'<#{channel.id}>').split('.')[0])
             else:
                 if additional_options == 'remove':
-                    gdb.upsert({'wchan':0, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    gdb.upsert({'wmsgs':"N", 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
                     await ctx.reply(t['sremwchan'])
                 else:
-                    gdb.upsert({'wchan':555,'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    gdb.upsert({'wmsgs':555,'id':ctx.guild.id}, Ft.id==ctx.guild.id)
                     await ctx.reply('Set to send welcome messages via DMs if possible.')
 
 @slash.slash(name='set_channel_authenticate', description="Set channel to log successful authentications to",
