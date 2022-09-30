@@ -436,7 +436,7 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
         en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
         if en == 555:
             enm = 'DMs'
-        elif en == 0:
+        elif en == 'N':
             enm = 'None'
         else:
             enm = f'<#{en}>'
