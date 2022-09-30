@@ -562,7 +562,7 @@ async def set_role(ctx: SlashContext, role=None, remove=None):
                     kamsg = await ctx.reply(f'That role is the one currently set to.\n{t["checku"]}...')
                     db = TinyDB('Wiki/auth.json')
                     count = 0
-                    async for m in ctx.guild.members(limit=99999):
+                    async for m in ctx.guild.fetch_members(limit=99999):
                         if db.search(Ft.id==m.id) != []:
                             try:
                                 if role not in m.roles:
@@ -576,7 +576,7 @@ async def set_role(ctx: SlashContext, role=None, remove=None):
                     gdb.upsert({'arole':role.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
                     db = TinyDB('Wiki/auth.json')
                     count = 0
-                    async for m in ctx.guild.members(limit=99999):
+                    async for m in ctx.guild.fetch_members(limit=99999):
                         if db.search(Ft.id==m.id) != []:
                             try:
                                 if role not in m.roles:
