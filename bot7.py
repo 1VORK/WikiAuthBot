@@ -523,9 +523,15 @@ async def set_channel_authenticate(ctx: SlashContext, channel=None, remove=None)
             description='Role to be assigned, leave blank to check value, will check & assign to all members once set',
             option_type=8,
             required=False
+        ),
+        create_option(
+            name='remove',
+            description="Select True to remove authentication assigning more users to the authentication role, otherwise leave blank",
+            option_type=5,
+            required=False
         )
     ])
-async def set_role(ctx: SlashContext, role=None):
+async def set_role(ctx: SlashContext, role=None, remove=None):
     gdb = TinyDB('Wiki/gsettings.json')
     t = get_lang(ctx)
     if isinstance(ctx.channel, discord.DMChannel):
@@ -546,22 +552,41 @@ async def set_role(ctx: SlashContext, role=None):
         if not ctx.author.guild_permissions.manage_guild:
             await ctx.reply(t['needmanser'])
         else:
-            if role.id == en:
-                await ctx.reply(f'That role is the one currently set to.')
+            if remove:
+                if en == 0:
+                    await ctx.reply('There already is no authentication role set.')
+                else:
+                    gdb.upsert({'arole':0, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    await ctx.reply('I will no longer assign the role to new authentications.\nFeel free to manually delete or unassign the role as you see fit.')
             else:
-                gdb.upsert({'arole':role.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
-                db = TinyDB('Wiki/auth.json')
-                count = 0
-                async for m in ctx.guild.members(limit=99999):
-                    if db.search(Ft.id==m.id) != []:
-                        try:
-                            if role not in m.roles:
-                                await m.add_roles(role)
-                            count+=1
-                        except:
-                            await ctx.reply(f'{t["cantass"]} {role.name} {t["cantass2"]}')
-                            return
-                await ctx.reply(f"{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(len(ctx.guild.members)))}")
+                if role.id == en:
+                    kamsg = await ctx.reply(f'That role is the one currently set to.\n{t["checku"]}...')
+                    db = TinyDB('Wiki/auth.json')
+                    count = 0
+                    async for m in ctx.guild.members(limit=99999):
+                        if db.search(Ft.id==m.id) != []:
+                            try:
+                                if role not in m.roles:
+                                    await m.add_roles(role)
+                                count+=1
+                            except:
+                                await kamsg.edit(content=f'That role is the one currently set to.\n{t["cantass"]} {role.name} {t["cantass2"]}')
+                                return
+                    await kamsg.edit(content=f"That role is the one currently set to.\n{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(len(ctx.guild.members)))}")                
+                else:
+                    gdb.upsert({'arole':role.id, 'id':ctx.guild.id}, Ft.id==ctx.guild.id)
+                    db = TinyDB('Wiki/auth.json')
+                    count = 0
+                    async for m in ctx.guild.members(limit=99999):
+                        if db.search(Ft.id==m.id) != []:
+                            try:
+                                if role not in m.roles:
+                                    await m.add_roles(role)
+                                count+=1
+                            except:
+                                await ctx.reply(f'{t["cantass"]} {role.name} {t["cantass2"]}')
+                                return
+                    await ctx.reply(f"{t['havass'].replace('ROLENAME',role.name).replace('COUNT',str(count)).replace('LENMESSAGEGUILDMEMBERS',str(len(ctx.guild.members)))}")
 
 def get_lang(ctx):
     Ft = Query()
