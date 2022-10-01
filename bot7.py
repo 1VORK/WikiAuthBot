@@ -38,6 +38,7 @@ async def help(ctx: SlashContext):
 @slash.slash(name='auth',description='Authenticate to a Wikimedia or Miraheze account')
 async def auth(ctx: SlashContext):
     gdb = TinyDB('Wiki/gsettings.json')
+    Ft = Query()
     mutmira = 0
     skip = 0
     t = get_lang(ctx)
