@@ -38,7 +38,6 @@ async def help(ctx: SlashContext):
 @slash.slash(name='auth',description='Authenticate to a Wikimedia or Miraheze account')
 async def auth(ctx: SlashContext):
     gdb = TinyDB('Wiki/gsettings.json')
-    Ft=Query()
     mutmira = 0
     skip = 0
     t = get_lang(ctx)
@@ -70,10 +69,10 @@ async def auth(ctx: SlashContext):
             try:
                 embed=discord.Embed(title='WikiAuthBot', description=f"**Click the relevant link below to authenticate:**\n<:mirahezelogo:446641749142798339> [Miraheze]({redirect})\n<:wikilogo:546848856650809344> [Wikimedia]({wedirect})")
                 embed.set_footer(text='For any issues, please ping IVORK#0001 on this server')          
-                await ctx.author.dm_channel.send(embed=embed)
-            except:
-                tm = await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
+                tm = await ctx.author.dm_channel.send(embed=embed)
                 await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
+            except:
+                await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
             return
         try:
             ismira = gdb.search(Ft.id==ctx.guild.id)[0]['mira'] #ctx.guild.id == 697848129185120256 or ctx.guild.id == 407504499280707585:
@@ -105,10 +104,10 @@ async def auth(ctx: SlashContext):
             embed=discord.Embed(title='WikiAuthBot', description=f"{t['pmauth']} {redirect}",color=0xCCCCCC)
             embed.set_thumbnail(url='https://cdn.discordapp.com/emojis/546848856650809344.png')
             embed.set_footer(text=afoot)
-            await ctx.author.dm_channel.send(embed=embed)
-        except:
-            tm = await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name).replace('.auth','/auth')}")
+            tm = await ctx.author.dm_channel.send(embed=embed)
             await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
+        except:
+            await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name).replace('.auth','/auth')}")
     else:
         m2ntok = open('tokens/m2ntok','r').read()
         m2nsec = open('tokens/m2nsec','r').read()
@@ -129,10 +128,10 @@ async def auth(ctx: SlashContext):
         try:
             embed=discord.Embed(title='WikiAuthBot', description=f"{t['pmauth'].replace('Wikimedia', 'Miraheze')} {redirect}", color=0xfcba03)
             embed.set_thumbnail(url='https://cdn.discordapp.com/emojis/446641749142798339.png')
-            await ctx.author.dm_channel.send(embed=embed)
-        except:
-            tm = await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name).replace('.auth','/auth')}")
+            tm = await ctx.author.dm_channel.send(embed=embed)
             await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
+        except:
+            await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name).replace('.auth','/auth')}")
 
 @slash.slash(name='whois',description='Check account details for an authenticated member',
     options=[
