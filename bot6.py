@@ -72,7 +72,7 @@ async def oread():
         smems = smems + len(g.members)
     msg = await client.get_channel(683550524611624998).fetch_message(683554590238441499)
     await msg.edit(content=f'''Servers: {len(client.guilds):,} Members: {smems:,}''')
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'''.auth in {len(client.guilds)} servers'''))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'''/auth in {len(client.guilds)} servers'''))
             
 @client.event
 async def on_member_join(member):
