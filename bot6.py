@@ -1383,5 +1383,8 @@ async def rply(message, content=None, embed=None, file=None):
                     await message.author.dm_channel.send(content=f'I could not reply in that channel so am responding here instead:\n{content}', embed=embed, file=file)
                 except Exception as e:
                     await globerr.send(f'rply failed even after DM due to {e} with message:\n{content}', embed=embed, file=file)
-
+    embed=discord.Embed(title='UPDATE: .chat commands are being deprecated',description="Due to upcoming changes with discord limiting access to *message intents* (my ability to view messages directly). I will only be usable via ***/slash*** commands after some time soon, but not all commands are working just yet. Use **/help** for more detail or join the support server via http://ivork.com.\n\n~[The dev](https://discord.com/users/140902977618706432); <t:1664578350:R>", url='https://support-dev.discord.com/hc/en-us/articles/4404772028055-Message-Content-Privileged-Intent-FAQ#:~:text=MESSAGE%20CONTENT%20IS%20BECOMING%20A,in%20100%20or%20more%20servers.', color=0xff0000)
+    embed.set_thumbnail(url=f"https://cdn.discordapp.com/emojis/665395417101631498.gif?size=48")
+    await message.channel.send(embed=embed)
+    
 client.run(token)                 
