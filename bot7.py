@@ -185,7 +185,7 @@ async def whois(ctx: SlashContext, user=None):
         else:
             ggps = ''
     except:
-        await kamsg.edit("Sorry, this user's authentication appears to be outdated, they will need to re-auth to fix this.")
+        await kamsg.edit(content="Sorry, this user's authentication appears to be outdated, they will need to re-auth to fix this.")
         return
     wiki=[]
     edits=0
