@@ -197,7 +197,7 @@ async def on_guild_join(guild):
     Ft = Query()
     if gdb.search(Ft.id==guild.id) == []:
         gdb.upsert({'id':guild.id, 'nam':guild.name, 'achan':0, 'arole':0, 'lang':'EN', 'wmsgs':'N', 'ablock':0, 'mira':0}, Ft.id==guild.id)
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'''.auth in {len(client.guilds)} servers'''))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'''/auth in {len(client.guilds)} servers'''))
     payload = {'server_count'  : len(client.guilds)}
     payloag = {'guildCount' : len(client.guilds)}
     async with aiohttp.ClientSession() as aioclient:
@@ -231,7 +231,7 @@ async def on_guild_join(guild):
 
 @client.event
 async def on_guild_remove(guild):
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'''.auth in {len(client.guilds)} servers'''))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'''/auth in {len(client.guilds)} servers'''))
     payload = {'server_count'  : len(client.guilds)}
     payloag = {'guildCount' : len(client.guilds)}
     async with aiohttp.ClientSession() as aioclient:
