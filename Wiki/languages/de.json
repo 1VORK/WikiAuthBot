@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Brettchenweber"
+			"Brettchenweber",
+			"Justman10000"
 		]
 	},
 	"Welcome": "Willkommen",
@@ -12,7 +13,7 @@
 	"pmauth": "Um dein Wikipedia-Konto zu bestätigen, folge bitte diesem Link:",
 	"Commands:": "Befehle:",
 	"hauth": "**.auth** - dein Wikimedia-Benutzerkonto bestätigen",
-	"hwho": "**.whois *userid*** - gib die Discord-Nutzer-ID ein, um das entsprechende Benutzerkonto eines bestätigten Nutzers zu sehen",
+	"hwho": "**.whois *userid*** - gib die Discord-Benutzerkennung ein, um das zugehörige Konto eines verifizierten Benutzers zu sehen",
 	"authas": "bestätigt als Benutzer:",
 	"Registered:": "Registriert:",
 	"Home:": "Heimatwiki:",
@@ -20,7 +21,7 @@
 	"Edits:": "Bearbeitungen:",
 	"Groups:": "Gruppen:",
 	"gGroups:": "Globale Gruppen:",
-	"max8": "Nur bis zu höchstens zehn sind aufgeführt. Klicke oben den Benutzernamen an, um alle Informationen zu sehen.",
+	"max8": "Es sind nur bis zu 10 Personen aufgeführt. Klicke oben auf den Namen, um alle Infos zu sehen.",
 	"hwho2": "Um diesen Befehl zu nutzen, schreibe **.whois *userid***",
 	"notauthd": "Dieser Nutzer scheint nicht bestätigt zu sein.",
 	"needmanser": "Du benötigst **Server-verwalten**-Rechte, um diesen Befehl zu nutzen.",
