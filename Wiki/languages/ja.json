@@ -45,7 +45,7 @@
 	"ssetwchan": "CHANNAME をウェルカムチャンネルとして設定しました。無効にするには、*.setwchan none* と入力してください。",
 	"helpcommands": "**.status** - WikiAuthBotのサーバーの状態を確認します。 \n**.setlang *Language** - サーバーの言語を以下から選択。AVAILLANG\n**.setachan *#auth-channel*** or ***channel id*** - WikiAuthBotが認証メッセージを投稿するチャンネルを以下から設定。CURACHAN\n**.setrole *@authrole*** or ***role id*** - 認証されたユーザーに割り当てられるロールを設定。 CURROLE\n**.setwchan *#general*** or ***channel id*** - ウェルカムメッセージを投稿するチャンネルを設定。CURWCHAN \n**.setblock *Y*** or ***N*** - ブロックされたユーザーの認証を禁止。 CURSBLOCK\n**.settype *W*** or ***M*** or ***F*** - Wikipedia、Miraheze、Fandomのどのサーバーで認証するか設定。 CURSMIRA\n**.invite** - このボット（WikiAuthBot）を自分のサーバーに招待するリンクを取得。",
 	"invt": "WikiAuthBotを自分のサーバーに導入するには、次のリンクを使用します。",
-	"Cantfindusedisplayorid": "*unam* という名前のユーザーが見つかりませんでした。ユーザーの表示名を使用しているか、ユーザーIDを使用しているかを確認してください。",
+	"Cantfindusedisplayorid": "*unam* という名前のユーザーが見つかりませんでした。ユーザーの表示名か、UserIDを使用しているかを確認してください。",
 	"YN2B": "ブロックされたユーザーの認証を許可するかどうか、**yes**または**no**のいずれかの値を入力してください。",
 	"YNBS": "ブロックされたメンバーの認証を許可しないことを **VAL** に設定しました。",
 	"BlockAuth": "申し訳ありませんが、**GUILDNAME**サーバーではブロックされたユーザーの認証が許可されていないため、あなた（アカウント**UNAM**）は認証されませんでした。管理者に問い合わせ、ブロック解除後に再度お試しください。",
