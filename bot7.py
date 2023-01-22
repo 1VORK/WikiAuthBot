@@ -42,6 +42,8 @@ async def auth(ctx: SlashContext):
     mutmira = 0
     skip = 0
     t = get_lang(ctx)
+    kamsg = await ctx.reply(f"I will send you the links in a direct message in a second.", hidden=True)
+    kaid = ctx.channel.id
     if isinstance(ctx.channel, discord.DMChannel):
         mutmira = 0
         for g in client.guilds:
@@ -52,8 +54,6 @@ async def auth(ctx: SlashContext):
         if ctx.guild.id == 434994995410239488:  #IF IVORK
             m2ntok = open('tokens/m2ntok','r').read()
             m2nsec = open('tokens/m2nsec','r').read()
-            kamsg = await ctx.reply(f"I will send you the links in a direct message in a second.", hidden=True)
-            kaid = ctx.channel.id
             consumer_token = ConsumerToken(m2ntok, m2nsec)
             handshaker = Handshaker(f"https://meta.miraheze.org/w/index.php", consumer_token)
             redirect, request_token = handshaker.initiate(callback=f'https://wikiauthbot.toolforge.org/mauth/{hex(ctx.author.id)}/')
@@ -108,9 +108,9 @@ async def auth(ctx: SlashContext):
             embed.set_thumbnail(url='https://cdn.discordapp.com/emojis/546848856650809344.png')
             embed.set_footer(text=afoot)
             tm = await ctx.author.dm_channel.send(embed=embed)
-            await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
+            #await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
         except:
-            await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name).replace('.auth','/auth')}")
+            await client.get_channel(kaid).send(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
     else:
         m2ntok = open('tokens/m2ntok','r').read()
         m2nsec = open('tokens/m2nsec','r').read()
@@ -132,9 +132,9 @@ async def auth(ctx: SlashContext):
             embed=discord.Embed(title='WikiAuthBot', description=f"{t['pmauth'].replace('Wikimedia', 'Miraheze')} {redirect}", color=0xfcba03)
             embed.set_thumbnail(url='https://cdn.discordapp.com/emojis/446641749142798339.png')
             tm = await ctx.author.dm_channel.send(embed=embed)
-            await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
+            #await ctx.reply(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
         except:
-            await ctx.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name).replace('.auth','/auth')}")
+            await client.get_channel(kaid).send(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
 
 @slash.slash(name='whois',description='Check account details for an authenticated member',
     options=[
