@@ -52,7 +52,7 @@ async def auth(ctx: SlashContext):
         if ctx.guild.id == 434994995410239488:  #IF IVORK
             m2ntok = open('tokens/m2ntok','r').read()
             m2nsec = open('tokens/m2nsec','r').read()
-            kamsg = await ctx.reply(f"I will send you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}) in a second.", hidden=True)
+            kamsg = await ctx.reply(f"I will send you the links in a direct message in a second.", hidden=True)
             consumer_token = ConsumerToken(m2ntok, m2nsec)
             handshaker = Handshaker(f"https://meta.miraheze.org/w/index.php", consumer_token)
             redirect, request_token = handshaker.initiate(callback=f'https://wikiauthbot.toolforge.org/mauth/{hex(ctx.author.id)}/')
