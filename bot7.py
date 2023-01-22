@@ -74,7 +74,7 @@ async def auth(ctx: SlashContext):
                 tm = await ctx.author.dm_channel.send(embed=embed)
                 await kamsg.edit(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
             except:
-                await kamsg.edit(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}", hidden=True)
+                await kamsg.reply(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}", hidden=True)
             return
         try:
             ismira = gdb.search(Ft.id==ctx.guild.id)[0]['mira'] #ctx.guild.id == 697848129185120256 or ctx.guild.id == 407504499280707585:
