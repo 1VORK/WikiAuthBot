@@ -53,6 +53,7 @@ async def auth(ctx: SlashContext):
             m2ntok = open('tokens/m2ntok','r').read()
             m2nsec = open('tokens/m2nsec','r').read()
             kamsg = await ctx.reply(f"I will send you the links in a direct message in a second.", hidden=True)
+            kaid = ctx.channel.id
             consumer_token = ConsumerToken(m2ntok, m2nsec)
             handshaker = Handshaker(f"https://meta.miraheze.org/w/index.php", consumer_token)
             redirect, request_token = handshaker.initiate(callback=f'https://wikiauthbot.toolforge.org/mauth/{hex(ctx.author.id)}/')
@@ -74,7 +75,7 @@ async def auth(ctx: SlashContext):
                 tm = await ctx.author.dm_channel.send(embed=embed)
                 await kamsg.edit(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
             except:
-                await kamsg.channel.send(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
+                await client.get_channel(kaid).send(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
             return
         try:
             ismira = gdb.search(Ft.id==ctx.guild.id)[0]['mira'] #ctx.guild.id == 697848129185120256 or ctx.guild.id == 407504499280707585:
