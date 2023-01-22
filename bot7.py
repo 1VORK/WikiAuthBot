@@ -73,7 +73,7 @@ async def auth(ctx: SlashContext):
                 embed=discord.Embed(title='WikiAuthBot', description=f"**Click the relevant link below to authenticate:**\n<:mirahezelogo:446641749142798339> [Miraheze]({redirect})\n<:wikilogo:546848856650809344> [Wikimedia]({wedirect})")
                 embed.set_footer(text='For any issues, please ping IVORK#0001 on this server')          
                 tm = await ctx.author.dm_channel.send(embed=embed)
-                await kamsg.edit(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
+                #await kamsg.edit(f"I have sent you the [links in a direct message](https://discord.com/channels/@me/{ctx.author.dm_channel.id}/{tm.id}).", hidden=True)
             except:
                 await client.get_channel(kaid).send(f"{t['pmoff']} <@{ctx.author.id}> {t['pmoff2'].replace('GUILDNAME', ctx.guild.name)}")
             return
