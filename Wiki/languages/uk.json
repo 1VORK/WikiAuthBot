@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ice bulldog"
+			"Ice bulldog",
+			"Пан Хаунд"
 		]
 	},
 	"Welcome": "Привіт",
@@ -43,7 +44,7 @@
 	"sremachan": "Канал аутентифікації успішно видалено. Використовуйте **.setachan *channeltag/channelid***, щоб встановити його знову.",
 	"hsetwchan": "Для використання цієї команди введіть **.setwchan #general** або ***221049808784326656*** або використовуйте ***none*** для відключення.",
 	"ssetwchan": "CHANNAME успішно встановлено як вітальний канал. Щоб відключити, введіть *.setwchan none*.",
-	"helpcommands": "**.status** - перевірити стан хоста бота\n**.setlang *Мова*** - Виберіть мову сервера з наступного: AVAILLANG\n**.setachan *# auth-channel*** або ***ідентифікатор каналу*** - встановити бот каналу повідомлення про автентифікацію на CURACHAN\n**.setrole *@authrole*** або ***роль ролі*** - встановити роль, яка повинна бути призначена автентифікованим користувачам CURROLE \n**.setwchan *#загальний*** або ***ідентифікатор каналу*** - встановлення повідомлень про бот каналів на CURWCHAN\n**.setblock *yes*** or ***no*** - disallows blocked users to authenticate CURSBLOCK\n**.settype *W*** or ***M*** or ***F*** - set server authentication type for Wikimedia or Miraheze or Fandom CURSMIRA\n**.invite** - отримати посилання, щоб запросити цього бота на свій власний сервер",
+	"helpcommands": "**.status** - перевірити стан хоста бота\n**.setlang *Мова*** - Виберіть мову сервера з наступного: AVAILLANG\n**.setachan *# auth-channel*** або ***ідентифікатор каналу*** - встановити бот каналу повідомлення про автентифікацію на CURACHAN\n**.setrole *@authrole*** або ***роль ролі*** - встановити роль, яка повинна бути призначена автентифікованим користувачам CURROLE \n**.setwchan *#загальний*** або ***ідентифікатор каналу*** - встановлення повідомлень про бот каналів на CURWCHAN\n**.setblock *Y*** або ***N*** - забороняє заблокованим користувачам автентифікувати CURSBLOCK\n**.settype *W*** або ***M*** або ***F*** - встановити тип автентифікації сервера для Wikimedia або Miraheze або Fandom CURSMIRA\n**.invite** - отримати посилання, щоб запросити цього бота на свій власний сервер",
 	"invt": "Щоб запросити цього бота на власний сервер, скористайтеся наступним посиланням",
 	"Cantfindusedisplayorid": "Не вдалося знайти користувача з іменем *unam*. Будь ласка, переконайтеся, що ви ввели нікнейм або UserID.",
 	"YN2B": "Please enter a value of either **yes** or **no** for whether you want to allow blocked users to authenticate.",

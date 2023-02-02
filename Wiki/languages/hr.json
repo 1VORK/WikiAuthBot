@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"McDutchie"
+		]
 	},
 	"Welcome": "Dobro došli",
 	"2auth": "! Da biste potvrdili svoj račun na Wikipediji, upišite **.auth**",
@@ -40,7 +42,7 @@
 	"sremachan": "Ne mogu pronaći SPLITTOID. Provjerite je li ID točan i je li mi dozvoljeno da vidim kanal.",
 	"hsetwchan": "Da biste upotrijebili ovu naredbu, upišite **.setwchan #opći** ili ***221049808784326656*** ili upišite ***none*** da biste to isključili.",
 	"ssetwchan": "Kanal CHANNAME postavljen je za poruke dobrodošlice. Da biste to opozvali, upišite *.setwchan none*.",
-	"helpcommands": "**.status** – provjerite status bota\n**.setlang *jezik*** – odaberite jedan od sljedećih jezika: AVAILLANG\n**.setachan *#kanal-za-potvrdu-računa*** ili ***ID_kanala*** – postavite kanal u koji će bot slati poruke o potvrdi računa CURACHAN\n**.setrole *@uloga_za_potvrđene*** ili ***ID_uloge*** – postavite ulogu koja će se dodijeliti potvrđenim suradnicima CURROLE\n**.setwchan *#opći*** ili ***ID_kanala*** – postavite kanal u koji će bot slati poruke dobrodošlice CURWCHAN\n**.setblock *yes*** or ***no*** - disallows blocked users to authenticate CURSBLOCK\n**.settype *W*** or ***M*** or ***F*** - set server authentication type for Wikimedia or Miraheze or Fandom CURSMIRA\n**.invite** – dobijte poveznicu za pozivanje bota na svoj poslužitelj",
+	"helpcommands": "**.status** – provjerite status bota\n**.setlang *jezik*** – odaberite jedan od sljedećih jezika: AVAILLANG\n**.setachan *#kanal-za-potvrdu-računa*** ili ***ID_kanala*** – postavite kanal u koji će bot slati poruke o potvrdi računa CURACHAN\n**.setrole *@uloga_za_potvrđene*** ili ***ID_uloge*** – postavite ulogu koja će se dodijeliti potvrđenim suradnicima CURROLE\n**.setwchan *#opći*** ili ***ID_kanala*** – postavite kanal u koji će bot slati poruke dobrodošlice CURWCHAN\n**.setblock *Y*** ili ***N*** - onemogućuje blokiranim korisnicima provjeru autentičnosti CURSBLOCK\n**.settype *W*** ili ***M*** ili ***F*** - postavljanje vrste provjere autentičnosti poslužitelja za Wikimedia ili Miraheze ili Fandom CURSMIRA\n**.invite** – dobijte poveznicu za pozivanje bota na svoj poslužitelj",
 	"invt": "Da biste pozvali bota na svoj poslužitelj, koristite sljedeću poveznicu",
 	"Cantfindusedisplayorid": "Nisam mogao pronaći korisnika po imenu *unam*. Obavezno koristite njihovo prikazno ime ili koristite njihov UserID.",
 	"YN2B": "Please enter a value of either **yes** or **no** for whether you want to allow blocked users to authenticate.",

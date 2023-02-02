@@ -46,7 +46,7 @@
 	"helpcommands": "**.status** - controleer de status van de host van de bot\n**.setlang *Taal*** - kies servertaal uit de volgende: AVAILLANG\n**.setachan *#auth-channel*** of ***channel id*** - stel kanaal in waar bot authenticatieberichten naar toe stuurt CURACHAN\n**.setrole *@authrole*** of ***role id*** - stel de rol in die wordt toegekend aan geverifieerde gebruikers CURROLE\n**.setwchan *#general*** of ***channel id*** - stel kanaal in waar de bot welkomstberichten op plaatst CURWCHAN\n**.setblock *Y*** of ***N*** - zorgt dat geblokkeerde gebruikers zich niet kunnen aanmelden CURSBLOCK\n**.settype *W*** of ***M*** of ***F*** - stel server-authenticatietype in voor Wikimedia of Miraheze of Fandom CURSMIRA\n**.invite** - ontvang een link om deze bot uit te nodigen op je eigen server",
 	"invt": "To invite this bot to your own server, use the following link",
 	"Cantfindusedisplayorid": "Ik kon geen gebruiker vinden met de naam *unam*. Controleer dat u de juiste weergavenaam of UserID gebruikt.",
-	"YN2B": "Voer een waarde in van **ja** of **nee** om aan te geven of u geblokkeerde gebruikers wilt toestaan zich aan te melden.",
+	"YN2B": "Voer een waarde in van **yes** (ja) of **no** (nee) om aan te geven of u geblokkeerde gebruikers wilt toestaan zich aan te melden.",
 	"YNBS": "De waarde voor het stoppen van aanmeldingen voor geblokkeerde gebruikers is ingesteld op **VAL**.",
 	"BlockAuth": "Helaas, u kon niet geauthenticeerd worden op de server **GUILDNAME** omdat geblokkeerde gebruikers niet geauthenticeerd kunnen worden, en uw account **UNAM** lijkt geblokkeerd te zijn. Probeer het opnieuw zodra u gedeblokkeerd bent.",
 	"YN2M": "Voer een waarde in van **W** voor Wikipedia, **M** voor Miraheze of **F** voor Fandom.",

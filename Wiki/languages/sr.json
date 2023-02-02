@@ -40,7 +40,6 @@
 	"sremachan": "Канал за потврду вики идентитета је уклоњен. Напишите **.setachan *channeltag/channelid*** да бисте га поново поставили.",
 	"hsetwchan": "Да бисте покренули ову команду, напишите **.setwchan #general** или ***221049808784326656*** или напишите ***none*** да бисте то искључили.",
 	"ssetwchan": "Канал CHANNAME постављен је за поруке добродошлице. Да бисте то опозвали, напишите *.setwchan none*.",
-	"helpcommands": "**.status** — проверите статус бота\n**.setlang *језик*** — одаберите један од следећих језика: AVAILLANG\n**.setachan *#канал-за-потврду-вики-идентитета*** или ***ID_канала*** — поставите канал у који ће бот слати поруке о потврди вики идентитета CURACHAN\n**.setrole *@улога_за_потврђене*** или ***ID_улоге*** — поставите улогу која ће бити додељена потврђеним корисницима CURROLE\n**.setwchan *#општи*** или ***ID_канала*** — поставите канал у који ће бот слати поруке добродошлице CURWCHAN\n**.setblock *yes*** or ***no*** - disallows blocked users to authenticate CURSBLOCK\n**.settype *W*** or ***M*** or ***F*** - set server authentication type for Wikimedia or Miraheze or Fandom CURSMIRA\n**.invite** — прибавите линк за позивање бота на свој сервер",
 	"invt": "Да бисте позвали бота на свој сервер, отворите следећи линк",
 	"Cantfindusedisplayorid": "Нисам могао да нађем корисника по имену *унам*. Обавезно користите њихово приказано име или користите њихов УсерИД.",
 	"YN2B": "Please enter a value of either **yes** or **no** for whether you want to allow blocked users to authenticate.",
