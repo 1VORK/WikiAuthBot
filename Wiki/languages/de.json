@@ -40,7 +40,7 @@
 	"cantsend": "Ich kann keine Nachrichten in CHANNAME senden. Bitte gib mir die Berechtigung send_messages und verwende den Befehl erneut. Bei anhaltenden Problemen wende dich an IVORK#0001.",
 	"ssetachan": "Du hast CHANNAME erfolgreich als Kanal für die Authentifizierungsnachrichten festgelegt. Um ihn zu deaktivieren, gib *.setachan none* ein.",
 	"sremwchan": "Der Willkommenskanal wurde erfolgreich entfernt. Verwende **.setwchan *channeltag/channelid***, um ihn wieder festzulegen.",
-	"cfchan": "Ich konnte SPLITTOID nicht finden. Bitte vergewissere dich, dass die Channel-ID korrekt ist und dass ich über die nötigen Rechte verfüge, um den Channel zu sehen.",
+	"cfchan": "Ich konnte SPLITTOID nicht finden. Bitte vergewissere dich, dass die Channel-ID korrekt ist und dass ich die Rechte habe, den Channel zu sehen.",
 	"sremachan": "Der Authentifizierungskanal wurde erfolgreich entfernt. Verwende **.setachan *channeltag/channelid***, um ihn wieder festzulegen.",
 	"hsetwchan": "Um diesen Befehl zu verwenden, gib **.setwchan #general** oder ***221049808784326656*** ein oder verwende ***none*** zum Deaktivieren.",
 	"ssetwchan": "Du hast CHANNAME erfolgreich als Willkommenskanal festgelegt. Um ihn zu deaktivieren, gib *.setwchan none* ein.",
