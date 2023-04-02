@@ -52,6 +52,7 @@ async def auth(ctx: SlashContext):
                     mutmira = 1
     else:
         if ctx.guild.id == 434994995410239488:  #IF IVORK
+            return
             m2ntok = open('tokens/m2ntok','r').read()
             m2nsec = open('tokens/m2nsec','r').read()
             consumer_token = ConsumerToken(m2ntok, m2nsec)
