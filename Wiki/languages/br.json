@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Huñvreüs"
 		]
 	},
@@ -45,7 +46,7 @@
 	"ssetwchan": "Termenet eo bet gant berzh CHANNAME evel bezañ ar ganol zegemer. Evit lazhañ, skrivit *.setwchan none*. eta",
 	"helpcommands": "**.status** - gwelet e peseurt stad emañ ar servijer hag a herberc'h ar bot\n**.setlang *Language*** - dibabit eta yezh ar servijer e-mesk al listennad da-heul: AVAILLANG\n**.setachan *#auth-channel*** pe c'hoazh ***channel id*** - termenit e-barzh peseurt kanol e vo kaset kemennadennoù ar bot evit kadarnaat an implijaderien eus CURACHAN\n**.setrole *@authrole*** pe ***role id*** - termenit ar roll da vezañ roet d'an implijaderien eus CURROLE hag a zo bet anavezet\n**.setwchan *#general*** pe ***channel id*** - termenit kanol ar c'hemennadennoù degemer evit an implijaderien eus CURWCHAN\n**.setblock *Y*** pe ***N*** - chom hep aotren an implijaderien bet forbannet war CURSBLOCK\n**.settype *W*** or ***M*** or ***F*** - set server authentication type for Wikimedia or Miraheze or Fandom CURSMIRA\n**.invite** - kaout ul liamm da bediñ ar bot-mañ da zont en ho servijer",
 	"invt": "Evit pediñ ar bot-mañ en ho servijer deoc'h-c'hwi, implijit al liamm da-heul",
-	"Cantfindusedisplayorid": "Ne c'hellan ket kavout implijader ebet gant an anv *unam*. Bezit asur e rit gant o anv-diskouez pe e rit gant o ID implijader.",
+	"Cantfindusedisplayorid": "N'on ket bet deuet a-benn da gavout implijer ebet gant an anv *unam*. Gwiriit ma rit gant o anv-diskouez ha n'eo ket gant o ID implijer.",
 	"YN2B": "Ebarzhit un dalvoudegezh etre **Y** pe **N** ma fell deoc'h aotren pe get d'an implijaderien forbannet da c'hellout kadarnaat o c'hont.",
 	"YNBS": "Termenet eo bet gant berzh ne vez ket roet an aotre d'an izili forbanet a glask bezañ anavezet e-barzh **VAL**.",
 	"BlockAuth": "Digarezit, met ne c'hellit ket bezañ anavazet e-barzh ar servijer **GUILDNAME** dre ma ne roont ket an aotre d'an implijaderien forbanet da vezañ anavezet, hag hervez kont **UNAM** a ziskouez bezañ forbanet. Klaskit adarre ur wech ma voc'h distanket.",
