@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Omotecho"
+			"Omotecho",
+			"Shirayuki"
 		]
 	},
 	"Welcome": "ようこそ",
@@ -13,7 +14,7 @@
 	"Commands:": "コマンド:",
 	"hauth": "**.auth** -  Wikimedia のアカウントであなたを認証します。",
 	"hwho": "**.whois *userid*** - Discordユーザーidを入力して、認証済みユーザーの関連アカウントを閲覧。",
-	"authas": "右のユーザー名として認証されました:",
+	"authas": "右の利用者として認証されました:",
 	"Registered:": "登録日:",
 	"Home:": "ホーム:",
 	"Total_edits:": "総編集数:",
