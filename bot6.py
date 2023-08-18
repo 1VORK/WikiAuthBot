@@ -112,11 +112,14 @@ async def on_member_join(member):
         for tdb in tdbs:
             if tdb.search(Ft.id==member.id) != []:
                 mem = tdb.search(Ft.id==member.id)[0]
-                if gdb.search(Ft.id==member.guild.id)[0]['arole'] != 0:
-                    try:
-                        await member.add_roles(get(member.guild.roles, id=gdb.search(Ft.id==member.guild.id)[0]['arole']))
-                    except:
-                        print(f"Error adding role on join for {member.name}({member.id}) in {member.guild.name}({member.guild.id}) with roleID {gdb.search(Ft.id==member.guild.id)[0]['arole']} at {datetime.datetime.now()}")
+                try:
+                    if gdb.search(Ft.id==member.guild.id)[0]['arole'] != 0:
+                        try:
+                            await member.add_roles(get(member.guild.roles, id=gdb.search(Ft.id==member.guild.id)[0]['arole']))
+                        except:
+                            print(f"Error adding role on join for {member.name}({member.id}) in {member.guild.name}({member.guild.id}) with roleID {gdb.search(Ft.id==member.guild.id)[0]['arole']} at {datetime.datetime.now()}")
+                except:
+                    pass
                 found = 0
                 fmsg = 0
                 if lang == 'RU':
@@ -269,7 +272,7 @@ async def on_message(message):
     else:
         try:
             if message.content.split()[0] == '.nauth':
-                srv = client.get_guild(221049808784326656)
+                srv = message.guild
                 arole = get(srv.roles, id=642751332263919618)
                 try:
                     role = srv.get_role(int(message.content.split()[1]))
@@ -961,7 +964,10 @@ async def on_message(message):
                         try:
                             await mem.add_roles(role)
                         except:
-                            print(f"Couldn't add role({gdb.search(Ft.id==g.id)[0]['arole']}) to {mem.name}({mem.id}) in guild {g.name}({g.id})")
+                            try:
+                                print(f"Couldn't add role({gdb.search(Ft.id==g.id)[0]['arole']}) to {mem.name}({mem.id}) in guild {g.name}({g.id})")
+                            except:
+                                print(f"Couldn't add non-db role to {mem.name}({mem.id}) in guild {g.name}({g.id})")
                         if sne == 0:
                             await g.get_member(diID).create_dm()
                             await g.get_member(diID).send(f"<:wikilogo:546848856650809344><:yesvote:359850124186353664> {identity['username']}")
