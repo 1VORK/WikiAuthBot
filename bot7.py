@@ -328,7 +328,10 @@ async def set_block(ctx: SlashContext, value=None):
         if ctx.author.guild_permissions.manage_guild == False:
             await ctx.reply(f"{t['needmanser']}", hidden=True)
         else:
-            en = gdb.search(Ft.id==ctx.guild.id)[0]['ablock']
+            try:
+                en = gdb.search(Ft.id==ctx.guild.id)[0]['ablock']
+            except:
+                en = 0
             if en == 1 and value == True:
                 await ctx.reply("Set_block is already enabled.")
             elif en == 0 and value == False:
@@ -360,7 +363,10 @@ async def set_type(ctx: SlashContext, type=None):
         await ctx.reply("Changing of server settings is only available within servers.")
         return
     if not type:
-        en = gdb.search(Ft.id==ctx.guild.id)[0]['mira']
+        try:
+            en = gdb.search(Ft.id==ctx.guild.id)[0]['mira']
+        except:
+            en = 0
         if en == 0:
             ty = '<:Wikipedia:542102882741125122>'
         else:
@@ -370,7 +376,10 @@ async def set_type(ctx: SlashContext, type=None):
         if not ctx.author.guild_permissions.manage_guild:
             await ctx.reply(f"{t['needmanser']}", hidden=True)
         else:
-            en = gdb.search(Ft.id==ctx.guild.id)[0]['mira']
+            try:
+                en = gdb.search(Ft.id==ctx.guild.id)[0]['mira']
+            except:
+                en = 0
             if en == 1 and type == 'M':
                 await ctx.reply(f"This server is already set to <:mirahezelogo:446641749142798339>")
             elif en == 0 and type == 'W':
@@ -404,7 +413,10 @@ async def set_language(ctx: SlashContext, language=None):
     for e in rdb.all():
         langs.append(e['lang'])        
     if not language:    
-        en = gdb.search(Ft.id==ctx.guild.id)[0]['lang']
+        try:
+            en = gdb.search(Ft.id==ctx.guild.id)[0]['lang']
+        except:
+            en = 'unknown'
         await ctx.reply(f"This server has it's language set to {en}\nAvailable languages: {', '.join(langs)}")
     else:
         if not ctx.author.guild_permissions.manage_guild:
@@ -443,7 +455,10 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
         await ctx.reply("Changing of server settings is only available within servers.")
         return
     if not channel and not additional_options:
-        en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
+        try:
+            en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
+        except:
+            en = 'N'
         if en == 555:
             enm = 'DMs'
         elif en == 'N':
@@ -456,7 +471,10 @@ async def set_channel_welcome(ctx: SlashContext, channel=None, additional_option
             await ctx.reply(t['needmanser'])
         else:
             if not additional_options:
-                en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
+                try:
+                    en = gdb.search(Ft.id==ctx.guild.id)[0]['wmsgs']
+                except:
+                    en = 0
                 if channel.id == en:
                     await ctx.reply(f"That channel is already set up as the welcome channel.")
                 else:
@@ -496,7 +514,10 @@ async def set_channel_authenticate(ctx: SlashContext, channel=None, remove=None)
     if isinstance(ctx.channel, discord.DMChannel):
         await ctx.reply("Changing of server settings is only available within servers.")
         return    
-    en = gdb.search(Ft.id==ctx.guild.id)[0]['achan']
+    try:
+        en = gdb.search(Ft.id==ctx.guild.id)[0]['achan']
+    except:
+        en = 0
     if not channel and not remove:        
         if en == 0:
             enm = 'None'
@@ -546,7 +567,10 @@ async def set_role(ctx: SlashContext, role=None, remove=None):
     if isinstance(ctx.channel, discord.DMChannel):
         await ctx.reply("Changing of server settings is only available within servers.")
         return
-    en = gdb.search(Ft.id==ctx.guild.id)[0]['arole']
+    try:
+        en = gdb.search(Ft.id==ctx.guild.id)[0]['arole']
+    except:
+        en = False
     if not role:
         if not en:
             await ctx.reply('This guild does not have an authentication role setup currently.')
