@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Ponor"
 		]
 	},
 	"Welcome": "Dobro došli",
 	"2auth": "! Da biste potvrdili svoj račun na Wikipediji, upišite **.auth**",
-	"Hello": "Bok",
+	"Hello": "Pozdrav!",
 	"pmoff": "Isključene su Vam privatne poruke",
 	"pmoff2": ", uključite ih pritiskom na strjelicu pored GUILDNAME i odabirom odgovarajuće mogućnosti pod *Postavke privatnosti*. Zatim ponovno upišite **.auth**.",
 	"pmauth": "Da biste potvrdili svoj račun na Wikipediji, otvorite sljedeću poveznicu:",
