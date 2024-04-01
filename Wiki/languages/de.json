@@ -3,7 +3,8 @@
 		"authors": [
 			"Brettchenweber",
 			"Justman10000",
-			"Timonade"
+			"Timonade",
+			"TomatoCake"
 		]
 	},
 	"Welcome": "Willkommen",
@@ -11,7 +12,7 @@
 	"Hello": "Hallo",
 	"pmoff": "Du hast Direktnachrichten ausgeschaltet",
 	"pmoff2": ", bitte schalte sie ein, indem du den Pfeil neben GUILDNAME anklickst und dann die Privatsphäreeinstellungen auswählst. Dann tippe **.auth** erneut ein.",
-	"pmauth": "Um dein Wikipedia-Konto zu bestätigen, folge bitte diesem Link:",
+	"pmauth": "Um dein Wikimedia-Konto zu bestätigen, folge bitte diesem Link:",
 	"Commands:": "Befehle:",
 	"hauth": "**.auth** - dein Wikimedia-Benutzerkonto bestätigen",
 	"hwho": "**.whois *userid*** - gib die Discord-Benutzerkennung ein, um das zugehörige Konto eines verifizierten Benutzers zu sehen",
@@ -26,7 +27,7 @@
 	"hwho2": "Um diesen Befehl zu nutzen, schreibe **.whois *userid***",
 	"notauthd": "Dieser Nutzer scheint nicht bestätigt zu sein.",
 	"needmanser": "Du benötigst **Server-verwalten**-Rechte, um diesen Befehl zu nutzen.",
-	"alrauth": "Du bist bereits als Benutzer authentifiziert:",
+	"alrauth": "Du bist bereits als folgender Benutzer authentifiziert:",
 	"alrauth2": " authentifiziert, es ist nichts weiter erforderlich.",
 	"sellang": "Bitte wähle eine der folgenden Sprachen aus",
 	"errlang": "Ich konnte diese Sprache nicht finden, für neue Sprachen kontaktiere bitte IVORK#0001, sonst wähle eine der folgenden",
@@ -36,12 +37,12 @@
 	"cantass": "Ich scheine keinen Zugriff zu haben, um diese Rolle zuzuweisen. Bitte stelle sicher, dass meine WikiAuth-Rolle oben",
 	"cantass2": "in der Liste der Serverrollen ist, damit ich Zugriff habe, zudem, dass ich *manage_roles* Zugriff habe. Wenn du die Änderungen erstellt hast, verwende einfach denselben Befehl, um allen berechtigten Mitgliedern die Rolle erneut zuzuweisen. Bei wiederholten Vorkommnissen wende dich an IVORK#0001.",
 	"havass": "Ich habe die Rolle ROLENAME dem/den Benutzer(n) COUNT/LENMESSAGEGUILDMEMBERS zugewiesen, die bereits authentifiziert sind.",
-	"nfindrole": "Ich konnte die Rolle MESCONTSPLI1 nicht finden. Um diesen Befehl zu verwenden, musst du ihn entweder markieren oder seine ID einfügen.",
+	"nfindrole": "Ich konnte die Rolle MESCONTSPLI1 nicht finden. Um diesen Befehl zu verwenden, musst du sie entweder markieren oder die ID einfügen.",
 	"etagid": "Um diesen Befehl zu verwenden, musst du ihn entweder markieren oder seine ID einfügen.",
 	"cantsend": "Ich kann keine Nachrichten in CHANNAME senden. Bitte gib mir die Berechtigung send_messages und verwende den Befehl erneut. Bei anhaltenden Problemen wende dich an IVORK#0001.",
 	"ssetachan": "Du hast CHANNAME erfolgreich als Kanal für die Authentifizierungsnachrichten festgelegt. Um ihn zu deaktivieren, gib *.setachan none* ein.",
 	"sremwchan": "Der Willkommenskanal wurde erfolgreich entfernt. Verwende **.setwchan *channeltag/channelid***, um ihn wieder festzulegen.",
-	"cfchan": "Ich konnte SPLITTOID nicht finden. Bitte vergewissere dich, dass die Channel-ID korrekt ist und dass ich die Rechte habe, den Channel zu sehen.",
+	"cfchan": "Ich konnte SPLITTOID nicht finden. Bitte vergewissere dich, dass die Kanal-ID korrekt ist und ich die Rechte habe, den Kanal zu sehen.",
 	"sremachan": "Der Authentifizierungskanal wurde erfolgreich entfernt. Verwende **.setachan *channeltag/channelid***, um ihn wieder festzulegen.",
 	"hsetwchan": "Um diesen Befehl zu verwenden, gib **.setwchan #general** oder ***221049808784326656*** ein oder verwende ***none*** zum Deaktivieren.",
 	"ssetwchan": "Du hast CHANNAME erfolgreich als Willkommenskanal festgelegt. Um ihn zu deaktivieren, gib *.setwchan none* ein.",
